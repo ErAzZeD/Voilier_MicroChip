@@ -2,6 +2,7 @@
 #include "Driver_GPIO.h"
 #include "Driver_Timer.h"
 #include "Driver_ADC.h"
+#include "Driver_UART.h"
 
 int toto ;
 void toggleLED(void) {
@@ -20,8 +21,12 @@ void getValueOfADC(void) {
 
 }
 
+signed int toto ;
 int main ( void )
 {
+	
+	/*uint8_t buffer[30];
+	int indx = 0;*/
 	
 	/* --------------- GPIO ----------------------- */
 	/*// LED
@@ -50,17 +55,31 @@ int main ( void )
 	
 	
 	//MyGPIO_Init(GPIOC, 10, Out_Ppull);
-	MyTimer_Base_Init(TIM4, 0x257, 0xEA60);
+	/*MyTimer_Base_Init(TIM4, 0x257, 0xEA60);
   
 	/*MyTimer_PWM(TIM4, 4);
 	MyTimer_SetDutyCicle(TIM4, 4, 50);*/
-	MyADC_Init(0, (*getValueOfADC));
+	/*MyADC_Init(0, (*getValueOfADC));
 	
 	// 	POUR LA PROCHAINE FOIS : METTRE EN PLACE L'INTERRUPTION A LA PLACE DU WHILE
-	MyTimer_ActiveIT (TIM4, 1, (*toggleLED));
-	do
-	{
+	MyTimer_ActiveIT (TIM4, 1, (*toggleLED));*/
+	
+	MyUART_Init(0);
+	
 		
-	} while ( 1 ) ;
+		
+	
+	
+	while (1)
+	{
+	/*	buffer[indx] = MyUART_GetData();
+ 		indx++;
+ 		if (indx>=1) {*/
+		//	MyUART_SendData('H');
+		/*	indx = 0;
+		}*/
+		toto = MyUART_GetData();	
+	}  
+	
 }
 

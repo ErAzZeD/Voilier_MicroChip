@@ -398,6 +398,11 @@
               <FileType>1</FileType>
               <FilePath>.\include\Driver_ADC.c</FilePath>
             </File>
+            <File>
+              <FileName>Driver_UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\include\Driver_UART.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -809,6 +814,11 @@
               <FileName>Driver_ADC.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\include\Driver_ADC.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\include\Driver_UART.c</FilePath>
             </File>
           </Files>
         </Group>
