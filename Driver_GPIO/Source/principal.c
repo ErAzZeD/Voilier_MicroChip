@@ -54,12 +54,24 @@ int main ( void )
   
 	/*MyTimer_PWM(TIM4, 4);
 	MyTimer_SetDutyCicle(TIM4, 4, 50);*/
-	MyADC_Init(0, (*getValueOfADC));
+	//MyADC_Init(0, (*getValueOfADC));
 	
 	// 	POUR LA PROCHAINE FOIS : METTRE EN PLACE L'INTERRUPTION A LA PLACE DU WHILE
-	MyTimer_ActiveIT (TIM4, 1, (*toggleLED));
+	//MyTimer_ActiveIT (TIM4, 1, (*toggleLED));
+	
+	
+	//Récupérer l'angle de la girouette dans le CTN de TIM2
+	RCC->APB2ENR |= (0x01 << 2) | (0x01 << 3) | (0x01 << 4);
+	MyTimer_Base_Init(TIM2, 360, 0);
+	MyTimer_INC(TIM2);
+	MyTimer_Base_Start(TIM2);
+	
+	//PWM pour contrôler le servomoteur
+	MyTimer_Base_Init(TIM3, 0xEA5F, 0x17); //periode de 20ms
+	MyTimer_PWM(TIM3, 3); //PB0
+	
 	do
-	{
+	{ 
 		
 	} while ( 1 ) ;
 }

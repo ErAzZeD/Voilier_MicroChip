@@ -25,9 +25,8 @@ void MyTimer_Base_Init(TIM_TypeDef * Timer, unsigned short ARR, unsigned short P
 	// Configuration et lancement du timer t
 	Timer->ARR = ARR;
 	Timer->PSC = PSC;
-	MyTimer_Base_Start(Timer);
+	//MyTimer_Base_Start(Timer);
 }
-	
 
 
 void MyTimer_ActiveIT (TIM_TypeDef * Timer , char Prio, void (*IT_function)(void)){
@@ -185,6 +184,14 @@ void MyTimer_SetDutyCicle(TIM_TypeDef * Timer , char Channel, float dutyCycle) {
 		}
 }
 
+
+void MyTimer_INC(TIM_TypeDef * Timer) {
+	Timer->CCMR1 |= 0x01; //CC1S
+	Timer->CCMR1 |= 0x01 << 8; //CC2S
+	Timer->CCER |= 0x1 << 1; //CC1P
+	Timer->CCER |= 0x1 << 5; //CC2P
+	Timer->SMCR |= 0x011; //SMS
+}
 
 void TIM1_UP_IRQHandler(void) {
 	if (PFNc != 0) {
