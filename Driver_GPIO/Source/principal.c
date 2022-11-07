@@ -2,6 +2,7 @@
 #include "Driver_GPIO.h"
 #include "Driver_Timer.h"
 #include "Driver_ADC.h"
+#include "Orientation_Plateau.h"
 
 int toto ;
 void toggleLED(void) {
@@ -50,14 +51,25 @@ int main ( void )
 	
 	
 	//MyGPIO_Init(GPIOC, 10, Out_Ppull);
-	MyTimer_Base_Init(TIM4, 0x257, 0xEA60);
+	//MyTimer_Base_Init(TIM4, 0x257, 0xEA60);
   
 	/*MyTimer_PWM(TIM4, 4);
 	MyTimer_SetDutyCicle(TIM4, 4, 50);*/
-	MyADC_Init(0, (*getValueOfADC));
+	//MyADC_Init(0, (*getValueOfADC));
 	
 	// 	POUR LA PROCHAINE FOIS : METTRE EN PLACE L'INTERRUPTION A LA PLACE DU WHILE
-	MyTimer_ActiveIT (TIM4, 1, (*toggleLED));
+	//MyTimer_ActiveIT (TIM4, 1, (*toggleLED));
+	
+	 MyTimer_Base_Init(TIM4,0x257,0xEA60);
+	 MyGPIO_Set(GPIOB,7);
+	 MyGPIO_Set(GPIOB,2);
+	 MyGPIO_Init(GPIOC,10,0x2);
+	 MyGPIO_Set(GPIOC,10);
+	 Orientation_Plateau();
+
+	
+	
+	
 	do
 	{
 		

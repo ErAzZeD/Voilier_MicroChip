@@ -21,21 +21,34 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.8.0
 Dialog DLL:      TARMSTM.DLL V1.66.0.0
  
 <h2>Project:</h2>
-U:\Documents\Microcontrôleurs\Driver_GPIO\GPIO.uvprojx
-Project File Date:  10/14/2022
+U:\Windows\Bureau\Voilier_MicroChip-main\Voilier_MicroChip\Driver_GPIO\GPIO.uvprojx
+Project File Date:  11/07/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Simulé'
 assembling startup_stm32f10x_md.s...
-compiling Driver_ADC.c...
-compiling Driver_GPIO.c...
-compiling system_stm32f10x.c...
 compiling Driver_Timer.c...
+compiling system_stm32f10x.c...
+compiling Driver_ADC.c...
 compiling principal.c...
+.\include\Orientation_Plateau.h(6): warning:  #1295-D: Deprecated declaration Orientation_Plateau - give arg types
+  void Orientation_Plateau();
+.\include\Orientation_Plateau.h(7): warning:  #1-D: last line of file ends without a newline
+  #endif
+Source\principal.c: 2 warnings, 0 errors
+compiling Orientation_Plateau.c...
+include\orientation_plateau.h(6): warning:  #1295-D: Deprecated declaration Orientation_Plateau - give arg types
+  void Orientation_Plateau();
+include\orientation_plateau.h(7): warning:  #1-D: last line of file ends without a newline
+  #endif
+include\Orientation_Plateau.c(12): warning:  #1-D: last line of file ends without a newline
+  }
+include\Orientation_Plateau.c: 3 warnings, 0 errors
+compiling Driver_GPIO.c...
 linking...
-Program Size: Code=1120 RO-data=268 RW-data=12 ZI-data=1028  
-".\Objects\tp1_Simule.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=2440 RO-data=268 RW-data=8 ZI-data=1024  
+".\Objects\tp1_Simule.axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -64,8 +77,8 @@ Package Vendor: Keil
    * Component: Keil::Device:Startup:1.0.0
       Source file:   Device\Source\system_stm32f10x.c
       Source file:   Device\Source\ARM\STM32F1xx_OPT.s
-      Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+      Include file:  RTE_Driver\Config\RTE_Device.h
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

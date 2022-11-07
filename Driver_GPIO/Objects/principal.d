@@ -10,3 +10,4 @@
 .\objects\principal.o: .\include\Driver_GPIO.h
 .\objects\principal.o: .\include\Driver_Timer.h
 .\objects\principal.o: .\include\Driver_ADC.h
+.\objects\principal.o: .\include\Orientation_Plateau.h
