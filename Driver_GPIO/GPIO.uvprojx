@@ -399,6 +399,11 @@
               <FilePath>.\include\Driver_ADC.c</FilePath>
             </File>
             <File>
+              <FileName>Orientation_Plateau.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\include\Orientation_Plateau.c</FilePath>
+            </File>
+            <File>
               <FileName>Driver_UART.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\include\Driver_UART.c</FilePath>
@@ -814,6 +819,11 @@
               <FileName>Driver_ADC.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\include\Driver_ADC.c</FilePath>
+            </File>
+            <File>
+              <FileName>Orientation_Plateau.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\include\Orientation_Plateau.c</FilePath>
             </File>
             <File>
               <FileName>Driver_UART.c</FileName>

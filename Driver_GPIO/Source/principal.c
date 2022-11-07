@@ -3,8 +3,11 @@
 #include "Driver_Timer.h"
 #include "Driver_ADC.h"
 #include "Driver_UART.h"
+#include "Orientation_Plateau.h"
+
 
 int toto ;
+int titi;
 void toggleLED(void) {
 	//MyGPIO_Toggle(GPIOC, 10);
 	//TIM4->SR &= 0x0 <<0;
@@ -25,66 +28,27 @@ signed int toto ;
 int main ( void )
 {
 	
-	/*uint8_t buffer[30];
-	int indx = 0;*/
-	
-	/* --------------- GPIO ----------------------- */
-	/*// LED
-	MyGPIO_Init(GPIOC, 10, Out_Ppull);
-	
-	//BOUTON
-	MyGPIO_Init(GPIOC, 8, In_PullDown);
-	
-	do
-	{
-		if (MyGPIO_Read(GPIOC, 8) == 1) {
-			MyGPIO_Set(GPIOC, 10);
-		} else {
-			MyGPIO_Reset(GPIOC, 10);
-		}
-	} while ( 1 ) ;*/
-	
-	
-	/* ------------------ TIMERS ------------------ */
-	
-	/*RCC->APB1ENR |= 0x1;
-	TIM2->ARR = 0x257; // Valeur marche interruption
-	TIM2->PSC = 0x1770; // Diviseur de 72MHz
-	TIM2->CR1 |= 0x1; //Valeur CEN ENABLED (launch clock)*/
-	
-	
-	
-	//MyGPIO_Init(GPIOC, 10, Out_Ppull);
-	/*MyTimer_Base_Init(TIM4, 0x257, 0xEA60);
-  
-	/*MyTimer_PWM(TIM4, 4);
-	MyTimer_SetDutyCicle(TIM4, 4, 50);*/
-	/*MyADC_Init(0, (*getValueOfADC));
-	
-	// 	POUR LA PROCHAINE FOIS : METTRE EN PLACE L'INTERRUPTION A LA PLACE DU WHILE
-	MyTimer_ActiveIT (TIM4, 1, (*toggleLED));*/
-	
 	MyUART_Init();
+	MyGPIO_Set(GPIOB,2);
+	MyTimer_Base_Init(TIM4,0xEA5F,0x017);
+	Orientation_Plateau_Init();
 	
-	// MyGPIO_Init(GPIOB, 0, AltOut_Ppull);
-	
-	while (1)
-	{
-	/*	buffer[indx] = MyUART_GetData();
- 		indx++;
- 		if (indx>=1) {*/
-		//	MyUART_SendData('H');
-		/*	indx = 0;
-		}*/
+	while (1) {
 		toto = MyUART_GetData();	
-		if (toto < 0) {
-			// Configurer bit de sens négatif
-			// Configurer vitesse de rotation (avec un offset à définir)
-		} else {
-			// Configurer bit de sens positif
-			// Configurer vitesse de rotation (avec un offset à définir)
+		if (toto > 0 && toto <= 100) {
+			titi = toto;
+			Orientation_Plateau(1, toto);
 		}
-	}  
+		if (toto > 0 && toto >= 156) {
+			titi = -(toto-255);
+			Orientation_Plateau(0, -(toto-255));
+		}
+		if (toto == 0) {
+			Orientation_Plateau_Stop();
+		}
+	}
+
+	 //Orientation_Plateau();
 	
 }
 
