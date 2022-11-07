@@ -403,11 +403,6 @@
               <FileType>1</FileType>
               <FilePath>.\include\Orientation_Plateau.c</FilePath>
             </File>
-            <File>
-              <FileName>Orientation_Plateau.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\include\Orientation_Plateau.h</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -824,11 +819,6 @@
               <FileName>Orientation_Plateau.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\include\Orientation_Plateau.c</FilePath>
-            </File>
-            <File>
-              <FileName>Orientation_Plateau.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\include\Orientation_Plateau.h</FilePath>
             </File>
           </Files>
         </Group>

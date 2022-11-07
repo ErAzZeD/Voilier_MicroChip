@@ -59,12 +59,13 @@ int main ( void )
 	
 	// 	POUR LA PROCHAINE FOIS : METTRE EN PLACE L'INTERRUPTION A LA PLACE DU WHILE
 	//MyTimer_ActiveIT (TIM4, 1, (*toggleLED));
-	
-	 MyTimer_Base_Init(TIM4,0x257,0xEA60);
-	 MyGPIO_Set(GPIOB,7);
+	// MyGPIO_Init(GPIOB, 2, Out_Ppull);
+	 MyTimer_Base_Init(TIM4,0xEA5F,0x017);
+	 //MyGPIO_Set(GPIOB,7);
 	 MyGPIO_Set(GPIOB,2);
-	 MyGPIO_Init(GPIOC,10,0x2);
-	 MyGPIO_Set(GPIOC,10);
+	 //MyGPIO_Init(GPIOC,10,0x2);
+	 //MyGPIO_Set(GPIOC,10);
+	 
 	 Orientation_Plateau();
 
 	
