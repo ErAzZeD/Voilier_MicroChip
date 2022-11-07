@@ -64,7 +64,7 @@ int main ( void )
 	// 	POUR LA PROCHAINE FOIS : METTRE EN PLACE L'INTERRUPTION A LA PLACE DU WHILE
 	MyTimer_ActiveIT (TIM4, 1, (*toggleLED));*/
 	
-	MyUART_Init(0);
+	MyUART_Init();
 	
 		
 		
@@ -79,6 +79,13 @@ int main ( void )
 		/*	indx = 0;
 		}*/
 		toto = MyUART_GetData();	
+		if (toto < 0) {
+			// Configurer bit de sens négatif
+			// Configurer vitesse de rotation (avec un offset à définir)
+		} else {
+			// Configurer bit de sens positif
+			// Configurer vitesse de rotation (avec un offset à définir)
+		}
 	}  
 	
 }

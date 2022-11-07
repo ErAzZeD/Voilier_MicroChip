@@ -1,7 +1,7 @@
 #include "Driver_UART.h"
 #include "Driver_GPIO.h"
 
-void MyUART_Init(int noTel) {
+void MyUART_Init() {
 	GPIOA->CRL = 0;
 	
 	

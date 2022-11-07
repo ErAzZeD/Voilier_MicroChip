@@ -3,7 +3,7 @@
 #include "stm32f10x.h"
 
 
-void MyUART_Init(int noTel);
+void MyUART_Init();
 void MyUART_SendData (char c);
 signed int MyUART_GetData (void);
 
