@@ -66,9 +66,7 @@ int main ( void )
 	
 	MyUART_Init();
 	
-		
-		
-	
+	// MyGPIO_Init(GPIOB, 0, AltOut_Ppull);
 	
 	while (1)
 	{
