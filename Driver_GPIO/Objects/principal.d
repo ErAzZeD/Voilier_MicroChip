@@ -13,3 +13,4 @@
 .\objects\principal.o: .\include\Driver_UART.h
 .\objects\principal.o: .\include\orientation_Plateau.h
 .\objects\principal.o: .\include\Niveau_Batterie.h
+.\objects\principal.o: .\include\Girouette.h

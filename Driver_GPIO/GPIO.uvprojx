@@ -413,6 +413,11 @@
               <FileType>1</FileType>
               <FilePath>.\include\Niveau_Batterie.c</FilePath>
             </File>
+            <File>
+              <FileName>Girouette.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\include\Girouette.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -839,6 +844,11 @@
               <FileName>Niveau_Batterie.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\include\Niveau_Batterie.c</FilePath>
+            </File>
+            <File>
+              <FileName>Girouette.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\include\Girouette.c</FilePath>
             </File>
           </Files>
         </Group>

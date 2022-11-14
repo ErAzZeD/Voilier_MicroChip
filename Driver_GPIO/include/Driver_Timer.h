@@ -22,6 +22,8 @@ void MyTimer_PWM(TIM_TypeDef * Timer , char Channel);
 
 void MyTimer_SetDutyCicle(TIM_TypeDef * Timer , char Channel, float dutyCycle);
 
+void MyTimer_INC(TIM_TypeDef * Timer);
+
 #define MyTimer_Base_Start(Timer) Timer->CR1 = 0x1 // To be continued... :) 
 #define MyTimer_Base_Stop(Timer) Timer->CR1 = 0x0
 
