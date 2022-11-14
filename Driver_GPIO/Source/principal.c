@@ -8,11 +8,6 @@
 #include "Niveau_Batterie.h"
 
 
-int toto ;
-int titi;
-
-
-
 
 signed int toto ;
 int main ( void )
@@ -21,22 +16,16 @@ int main ( void )
 	MyUART_Init();
 	MyTimer_Base_Init(TIM4,0xEA5F,0x017);
 	Orientation_Plateau_Init();	
-	Battery_level();
-
-
+	
 	while(1) {
 		for (i =0; i<1000000; i++);
 		MyUART_SendData('f');
 	}
-
 }
 
 void USART3_IRQHandler(void) {
 	while (!(USART3->SR & (1<<5))); 
 	toto = USART3->DR;  // Read the data. 
-	while (1) {
-	  toto = MyUART_GetData();	
-
 		if (toto > 0 && toto <= 100) {
 			Orientation_Plateau(1, toto);
 		}
@@ -46,10 +35,6 @@ void USART3_IRQHandler(void) {
 		if (toto == 0) {
 			Orientation_Plateau_Stop();
 		}
-
-		
-	}
-
-
 }
+
 
