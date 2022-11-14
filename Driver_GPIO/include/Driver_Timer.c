@@ -169,16 +169,16 @@ void MyTimer_SetDutyCicle(TIM_TypeDef * Timer , char Channel, float dutyCycle) {
 	  int varCRR = (int) (Timer->ARR * (dutyCycle/100.0));
 		switch (Channel) {
 			case(1):
-				Timer->CCR1 |= varCRR;	
+				Timer->CCR1 = varCRR;	
 				break;
 			case(2):
-				Timer->CCR2 |= varCRR;	
+				Timer->CCR2 = varCRR;	
 				break;
 			case(3):
-				Timer->CCR3 |= varCRR;	
+				Timer->CCR3 = varCRR;	
 				break;
 			case(4):
-				Timer->CCR4 |= varCRR;	
+				Timer->CCR4 = varCRR;	
 				break;
 			default:
 				break;

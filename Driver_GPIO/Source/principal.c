@@ -8,7 +8,7 @@
 
 int toto ;
 int titi;
-void toggleLED(void) {
+/*void toggleLED(void) {
 	//MyGPIO_Toggle(GPIOC, 10);
 	//TIM4->SR &= 0x0 <<0;
 	MyADCStartConv(0);
@@ -22,33 +22,35 @@ void getValueOfADC(void) {
 	int valueOfADC = ADC1->DR;
 	ADC1->CR2 |= 0x1 << 22;
 
-}
+}*/
+
+
 
 signed int toto ;
 int main ( void )
 {
-	
+	int i;
 	MyUART_Init();
-	MyGPIO_Set(GPIOB,2);
 	MyTimer_Base_Init(TIM4,0xEA5F,0x017);
-	Orientation_Plateau_Init();
+	Orientation_Plateau_Init();	
 	
-	while (1) {
-		toto = MyUART_GetData();	
+	while(1) {
+		for (i =0; i<1000000; i++);
+		MyUART_SendData('f');
+	}
+}
+
+void USART3_IRQHandler(void) {
+	while (!(USART3->SR & (1<<5))); 
+	toto = USART3->DR;  // Read the data. 
 		if (toto > 0 && toto <= 100) {
-			titi = toto;
 			Orientation_Plateau(1, toto);
 		}
 		if (toto > 0 && toto >= 156) {
-			titi = -(toto-255);
 			Orientation_Plateau(0, -(toto-255));
 		}
 		if (toto == 0) {
 			Orientation_Plateau_Stop();
 		}
-	}
-
-	 //Orientation_Plateau();
-	
 }
 
