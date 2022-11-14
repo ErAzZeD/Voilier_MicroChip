@@ -3,11 +3,14 @@
 #include "Driver_Timer.h"
 #include "Driver_ADC.h"
 #include "Driver_UART.h"
+
 #include "Orientation_Plateau.h"
+#include "Niveau_Batterie.h"
 
 
 int toto ;
 int titi;
+
 void toggleLED(void) {
 	//MyGPIO_Toggle(GPIOC, 10);
 	//TIM4->SR &= 0x0 <<0;
@@ -34,7 +37,7 @@ int main ( void )
 	Orientation_Plateau_Init();
 	
 	while (1) {
-		toto = MyUART_GetData();	
+	/*	toto = MyUART_GetData();	
 		if (toto > 0 && toto <= 100) {
 			titi = toto;
 			Orientation_Plateau(1, toto);
@@ -46,6 +49,8 @@ int main ( void )
 		if (toto == 0) {
 			Orientation_Plateau_Stop();
 		}
+		*/
+		Battery_level();
 	}
 
 	 //Orientation_Plateau();
