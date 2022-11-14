@@ -409,11 +409,6 @@
               <FilePath>.\include\Driver_UART.c</FilePath>
             </File>
             <File>
-              <FileName>Niveau_Batterie.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\include\Niveau_Batterie.h</FilePath>
-            </File>
-            <File>
               <FileName>Niveau_Batterie.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\include\Niveau_Batterie.c</FilePath>
@@ -839,11 +834,6 @@
               <FileName>Driver_UART.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\include\Driver_UART.c</FilePath>
-            </File>
-            <File>
-              <FileName>Niveau_Batterie.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\include\Niveau_Batterie.h</FilePath>
             </File>
             <File>
               <FileName>Niveau_Batterie.c</FileName>
