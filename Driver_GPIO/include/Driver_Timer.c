@@ -25,7 +25,7 @@ void MyTimer_Base_Init(TIM_TypeDef * Timer, unsigned short ARR, unsigned short P
 	// Configuration et lancement du timer t
 	Timer->ARR = ARR;
 	Timer->PSC = PSC;
-	MyTimer_Base_Start(Timer);
+	//MyTimer_Base_Start(Timer);
 }
 	
 
@@ -40,7 +40,7 @@ void MyTimer_ActiveIT (TIM_TypeDef * Timer , char Prio, void (*IT_function)(void
 	} 
 	if (Timer == TIM2) {
 		NVIC->ISER[0] |= 0x1 << 28;
-		NVIC->IP[28] |= Prio << 4;
+		NVIC->IP[28] |= Prio << 4; 
 	}
 	if (Timer == TIM3) {
 		NVIC->ISER[0] |= 0x1 << 29;

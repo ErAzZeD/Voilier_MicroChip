@@ -13,10 +13,12 @@ void MyADC_Init(int channel, void (*IT_function)(void)) {
 		ADC1->CR2 |= 0x7 << 17; //EXTSEL		ADC1->CR2 |= 0x1 << 22;
 		ADC1->CR2 |= 0x1 << 20;
 		ADC1->CR1 |= 0x1 << 5; //EOCIE (génération d'une IT) 
-		ADC1->SQR1 |= channel << 0; 
+		ADC1->SQR3 |= channel << 0; 
 		fn = IT_function;
 
 	}
+	NVIC->ISER[0] |= 1<< 18 ;
+	NVIC->IP[15] = 2  << 4;
 }
 
 void MyADCStartConv(int channel){
